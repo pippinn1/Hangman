@@ -19,7 +19,7 @@ handlers:
 
 - url: .*
   script: main.app
-  password: required
+  login: required
 
 libraries:
 - name: webapp2
