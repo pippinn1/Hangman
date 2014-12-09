@@ -6,6 +6,7 @@
 
 {% block body_block %}
 <title> Hangman </title>
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -59,7 +60,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
   <p class="navbar-text">Signed in as Mark Otto</p>
-  <button type="button" class="btn btn-default navbar-btn">Sign out</button>
+  <a href="http://localhost:10080/_ah/login?continue=http%3A//localhost%3A10080/" class="btn btn-default navbar-btn" role="button">Sign Out</a>
 </nav>
 
 <form role="form" action="/" method="POST">
