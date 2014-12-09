@@ -47,14 +47,14 @@ class MainHandler(BaseHandler):
 
         # Figure out how to search if user_entered_letter exists in question_tokens
 
-        
+
         blog_content = self.request.get("letter")
         blog_post = models.BlogPost()
         blog_post.content = blog_content
         blog_post.date = datetime.now()
         blog_post.put()
 
-        self.response.write("Answer submitted ")
+        
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
