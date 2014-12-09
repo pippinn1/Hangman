@@ -54,7 +54,7 @@ class MainHandler(BaseHandler):
         blog_post.date = datetime.now()
         blog_post.put()
 
-        
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
