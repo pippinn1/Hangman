@@ -23,7 +23,7 @@ from google.appengine.ext import ndb
 from google.appengine.ext.webapp import template
 
 import models
-    
+
 class BaseHandler(webapp2.RequestHandler):
 
     def render_template(self, template_name, values):
@@ -45,7 +45,7 @@ class MainHandler(BaseHandler):
         blog_post.date = datetime.now()
         blog_post.put()
 
-        self.response.write("That worked!")
+        self.response.write("Answer submitted ")
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

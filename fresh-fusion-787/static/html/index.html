@@ -6,10 +6,16 @@
 
 {% block body_block %}
 <title> Hangman </title>
-<input type="text" class="form-control" placeholder="Enter letter here">
-<button type="button" class="btn btn-primary">Submit</button>
+
+<form role="form" action="/" method="POST">
+  <div class="form-group">
+    <label for="Hangman">Hangman</label><br/>
+    <textarea id="enter letter here" name="blogcontent" placeholder="Enter Guess Here" rows="1" cols="16"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 
 
-<textarea class="form-control" rows="3"></textarea>
+
 </body>
 {% endblock %}
