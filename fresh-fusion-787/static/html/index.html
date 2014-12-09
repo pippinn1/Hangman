@@ -14,33 +14,6 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-.border-top-radius(@radius) {
-  border-top-right-radius: @radius;
-  border-top-left-radius: @radius;
-}
-.border-right-radius(@radius) {
-  border-bottom-right-radius: @radius;
-  border-top-right-radius: @radius;
-}
-.border-bottom-radius(@radius) {
-  border-bottom-right-radius: @radius;
-  border-bottom-left-radius: @radius;
-}
-.border-left-radius(@radius) {
-  border-bottom-left-radius: @radius;
-  border-top-left-radius: @radius;
-}
-Box (Drop) shadows
-If your target audience is using the latest and greatest browsers and devices, be sure to just use the box-shadow property on its own. If you need support for older Android (pre-v4) and iOS devices (pre-iOS 5), use the deprecated mixin to pick up the required -webkit prefix.
 
-The mixin is deprecated as of v3.1.0, since Bootstrap doesn't officially support the outdated platforms that don't support the standard property. To preserve backwards-compatibility, Bootstrap will continue to use the mixin internally until Bootstrap v4.
-
-Be sure to use rgba() colors in your box shadows so they blend as seamlessly as possible with backgrounds.
-
-Copy
-.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
-  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
-  box-shadow: @shadow;
-}
 </body>
 {% endblock %}
