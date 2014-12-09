@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import datetime
 import webapp2
 import os
@@ -23,8 +24,10 @@ from google.appengine.ext.webapp import template
 
 
 class BlogPost(ndb.Model):
+
     date = ndb.DateTimeProperty()
     content = ndb.StringProperty()
+    
 
 class BaseHandler(webapp2.RequestHandler):
 
@@ -38,10 +41,16 @@ class SecondHandler(webapp2.RequestHandler):
 
         self.response.write('Another place on the web!')
 
-class MainHandler(webapp2.RequestHandler):
+class MainHandler(BaseHandler):
+
     def get(self):
-        self.response.write('Hello world!')
+
+        self.response.write(self.render_template("index.html", {}))
+
+    def post(self):
+        self.response.write("test")
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/second', SecondHandler)
 ], debug=True)
