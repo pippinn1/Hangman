@@ -22,12 +22,14 @@ import os
 from google.appengine.ext import ndb
 from google.appengine.ext.webapp import template
 
+import models 
+
 
 class BlogPost(ndb.Model):
 
     date = ndb.DateTimeProperty()
     content = ndb.StringProperty()
-    
+
 
 class BaseHandler(webapp2.RequestHandler):
 
