@@ -49,7 +49,7 @@ class MainHandler(BaseHandler):
 
         blog_content = self.request.get("letter")
 
-        blog_post = models.letter()
+        blog_post = models.BlogPost()
         blog_post.content = blog_content
         blog_post.date = datetime.now()
         blog_post.put()
