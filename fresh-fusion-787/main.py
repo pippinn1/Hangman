@@ -15,33 +15,20 @@
 # limitations under the License.
 #
 
-import datetime
+from datetime import datetime
 import webapp2
 import os
 
 from google.appengine.ext import ndb
 from google.appengine.ext.webapp import template
 
-import models 
-
-
-class BlogPost(ndb.Model):
-
-    date = ndb.DateTimeProperty()
-    content = ndb.StringProperty()
-
-
+import models
+    
 class BaseHandler(webapp2.RequestHandler):
 
     def render_template(self, template_name, values):
         path = os.path.join(os.path.dirname(__file__), "static", "html", template_name)
         return template.render(path, values)
-
-class SecondHandler(webapp2.RequestHandler):
-
-    def get(self):
-
-        self.response.write('Another place on the web!')
 
 class MainHandler(BaseHandler):
 
@@ -50,9 +37,16 @@ class MainHandler(BaseHandler):
         self.response.write(self.render_template("index.html", {}))
 
     def post(self):
-        self.response.write("test")
+
+        blog_content = self.request.get("blogcontent")
+
+        blog_post = models.BlogPost()
+        blog_post.content = blog_content
+        blog_post.date = datetime.now()
+        blog_post.put()
+
+        self.response.write("That worked!")
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/second', SecondHandler)
 ], debug=True)
