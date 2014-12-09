@@ -46,10 +46,10 @@ class MainHandler(BaseHandler):
         user_entered_letter = self.request.get("letter")
 
         # Figure out how to search if user_entered_letter exists in question_tokens
-        
-        blog_content = self.request.get("blogcontent")
 
-        blog_post = models.BlogPost()
+        blog_content = self.request.get("letter")
+
+        blog_post = models.letter()
         blog_post.content = blog_content
         blog_post.date = datetime.now()
         blog_post.put()
