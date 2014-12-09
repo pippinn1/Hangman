@@ -38,6 +38,15 @@ class MainHandler(BaseHandler):
 
     def post(self):
 
+        question = "Cat"
+        question_tokens = question.split()
+
+        # ["C", "a", "t"]
+
+        user_entered_letter = self.request.get("letter")
+
+        # Figure out how to search if user_entered_letter exists in question_tokens
+
         blog_content = self.request.get("blogcontent")
 
         blog_post = models.BlogPost()
